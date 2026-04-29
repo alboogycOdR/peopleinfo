@@ -28,6 +28,7 @@ export const appRouter = router({
         cellNumber: z.string().min(1, "Cell number is required"),
         employed: z.boolean(),
         hasBusiness: z.boolean(),
+        unemployed: z.boolean(),
         skills: z.string().min(1, "Skills are required"),
       }))
       .mutation(async ({ input }) => {
@@ -38,6 +39,7 @@ export const appRouter = router({
           cellNumber: input.cellNumber,
           employed: input.employed,
           hasBusiness: input.hasBusiness,
+          unemployed: input.unemployed,
           skills: input.skills,
         });
         return { success: true };

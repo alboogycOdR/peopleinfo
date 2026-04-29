@@ -17,6 +17,7 @@ export default function SubmissionForm() {
     cellNumber: "",
     employed: false,
     hasBusiness: false,
+    unemployed: false,
     skills: "",
   });
 
@@ -54,6 +55,7 @@ export default function SubmissionForm() {
         cellNumber: "",
         employed: false,
         hasBusiness: false,
+        unemployed: false,
         skills: "",
       });
       toast.success("Person information submitted successfully!");
@@ -183,7 +185,7 @@ export default function SubmissionForm() {
                 </div>
 
                 {/* Employment and Business Status */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 bg-white/5 border border-white/10 rounded-lg">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-4 bg-white/5 border border-white/10 rounded-lg">
                   <div className="flex items-center space-x-3">
                     <input
                       type="checkbox"
@@ -210,6 +212,19 @@ export default function SubmissionForm() {
                       Have a Business
                     </Label>
                   </div>
+                  <div className="flex items-center space-x-3">
+                    <input
+                      type="checkbox"
+                      id="unemployed"
+                      name="unemployed"
+                      checked={formData.unemployed}
+                      onChange={handleCheckboxChange}
+                      className="w-5 h-5 rounded border-white/30 bg-white/10 cursor-pointer"
+                    />
+                    <Label htmlFor="unemployed" className="text-white font-semibold text-sm cursor-pointer">
+                      Unemployed
+                    </Label>
+                  </div>
                 </div>
 
                 {/* Skills */}
@@ -222,7 +237,7 @@ export default function SubmissionForm() {
                     name="skills"
                     value={formData.skills}
                     onChange={handleInputChange}
-                    placeholder="Describe your professional skills (e.g., Programming, Design, Management)"
+                    placeholder="Describe your professional skills (e.g., Carpentry, Painting, Building, Plumbing)"
                     required
                     className="bg-white/5 border-white/20 text-white placeholder:text-white/40 focus:bg-white/10 focus:border-white/40 resize-none h-24"
                   />

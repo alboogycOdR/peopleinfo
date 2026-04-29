@@ -30,6 +30,7 @@ export const personRecords = pgTable("person_records", {
   cellNumber: varchar("cellNumber", { length: 20 }).notNull(),
   employed: boolean("employed").notNull(),
   hasBusiness: boolean("hasBusiness").notNull(),
+  unemployed: boolean("unemployed").notNull().default(false),
   skills: text("skills").notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().notNull().$onUpdate(() => new Date()),

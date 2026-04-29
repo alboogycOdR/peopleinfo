@@ -1,0 +1,1 @@
+ALTER TABLE "person_records" ADD COLUMN "unemployed" boolean DEFAULT false NOT NULL;

@@ -8,6 +8,13 @@
       "when": 1777412987025,
       "tag": "0000_high_beast",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1777491170570,
+      "tag": "0001_cuddly_energizer",
+      "breakpoints": true
     }
   ]
 }

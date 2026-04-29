@@ -17,7 +17,7 @@ import { LogOut, Search, ChevronUp, ChevronDown } from "lucide-react";
 import { ProtectedAdminRoute } from "@/components/ProtectedAdminRoute";
 import type { PersonRecord } from "@/types";
 
-type SortableField = "name" | "surname" | "cellNumber" | "employed" | "hasBusiness";
+type SortableField = "name" | "surname" | "cellNumber" | "employed" | "hasBusiness" | "unemployed";
 
 type SortField = SortableField | null;
 type SortOrder = "asc" | "desc";
@@ -234,6 +234,15 @@ function AdminDashboardContent() {
                           <SortIcon field="hasBusiness" />
                         </div>
                       </TableHead>
+                      <TableHead
+                        className="text-white font-bold cursor-pointer hover:bg-white/10 select-none"
+                        onClick={() => handleSort("unemployed")}
+                      >
+                        <div className="flex items-center gap-2">
+                          Unemployed
+                          <SortIcon field="unemployed" />
+                        </div>
+                      </TableHead>
                       <TableHead className="text-white font-bold">Skills</TableHead>
                     </TableRow>
                   </TableHeader>
@@ -271,6 +280,15 @@ function AdminDashboardContent() {
                               : "px-2 py-1 rounded text-xs font-semibold bg-gray-900/30 text-gray-300 border border-gray-500/30"}
                           >
                             {record.hasBusiness ? "Yes" : "No"}
+                          </span>
+                        </TableCell>
+                        <TableCell className="text-white">
+                          <span
+                            className={record.unemployed
+                              ? "px-2 py-1 rounded text-xs font-semibold bg-amber-900/30 text-amber-300 border border-amber-500/30"
+                              : "px-2 py-1 rounded text-xs font-semibold bg-gray-900/30 text-gray-300 border border-gray-500/30"}
+                          >
+                            {record.unemployed ? "Yes" : "No"}
                           </span>
                         </TableCell>
                         <TableCell className="text-white/80 text-sm max-w-xs truncate">
