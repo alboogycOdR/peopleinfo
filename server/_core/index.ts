@@ -1,10 +1,10 @@
 import "dotenv/config";
 import { createServer } from "http";
 import net from "net";
-import { registerOAuthRoutes } from "./oauth";
-import { registerStorageProxy } from "./storageProxy";
-import { createApp } from "./app";
-import { serveStatic, setupVite } from "./vite";
+import { registerOAuthRoutes } from "./oauth.js";
+import { registerStorageProxy } from "./storageProxy.js";
+import { createApp } from "./app.js";
+import { serveStatic, setupVite } from "./vite.js";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
